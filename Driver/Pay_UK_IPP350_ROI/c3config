@@ -1,0 +1,128 @@
+###KFC INTEGRATION###
+# Axis primary server (mandatory)
+AXIS_COM=socket 217.109.89.157 9744
+
+# Axis secondary server (optional)
+AXIS_COM2=socket 217.109.89.157 9744
+
+# Enable SSL on messages to Axis
+# 0 : SSL is disabled
+# 1 : SSL is enabled
+SSL_MODE=1
+
+# 0 - first try primary Axis, No offline
+# 1 - first try with last successful Axis, No offline
+# 2 - first try with last successful Axis, offline allowed
+# 3 - first try primary Axis, offline allowed
+# 4 - first try with last successful Axis, offline allowed, restart from server 1 after offline
+# 5 - first try primary Axis, offline allowed, if offline, don’t retry to go online until a successful init is done
+AXIS_OFF=3
+
+OFF_BNC_TYPE=B0
+
+# Parameter used to define the link between C3 and the pinpad.
+L10_COM=COM4 115200/8/1/0
+
+# Reader Type > L3000E is default (name is historical – L3000E being CKD / MoneyLine readers)
+LECTEUR_CB=RPM_NO_KEYED
+
+# Name of receipt files
+LPR_COM=%ticket
+
+LPR_LINE=1       
+
+# Defines card types available for processing
+CARTES=ADM CLS
+
+CHEQUE=00
+
+# Is the till attended?
+# 1 : Unattended, no cashier, no keyboard input
+# 0 : Attended, key entry available on the till
+AUTOMATE=1
+
+# Block size for INIT (no more used)
+LENT_INIT=5
+
+# First line displayed on the PED on IDLE mode (16 characters)
+REPOS_1=WELCOME TO YUM
+
+# Second line displayed on the PED on IDLE mode (16 characters)
+REPOS_2=RESTAURANTS
+
+# Define the type of POS
+# - 10 : Attended POS (default)
+# - 20 : MOTO
+# - 40 : Unattended POS
+# Some additional values can be used for the
+# French market.
+MODE_PAIEMENT=10
+
+# Synchronize date and time with host system
+# (Axis)
+# 0 : No sync
+# 1 : Enable sync
+SET_DATE_TIME=0
+
+CODE_LANGUE=en
+
+# Controls receipt printing for unsuccessful sales
+# transaction:
+# 0 : No ticket
+# 1 : Ticket printed
+TICKET_TNA=1
+
+#Select merchant receipt
+TICKET_COMM=0
+
+#Control receipt printing
+#‘0’: C3Qt sends the receipts to the printer
+#‘1’: C3Qt displays receipts (default).
+PRINTER_MODE=1
+
+QTPV=00000000
+
+QCASH=00000000
+
+TRACE_L1000=1
+
+PRINT_DEBUG=1
+
+EXTENDED_CALLBACK=1
+
+# Generate log file of exchanges between the
+# Sales Application and C3 (No PCI Data included)
+# 0 : No log
+# 1 or 2 : Log of exchanges
+C3NET_TRACE=2
+
+# 0 : Value Configured in tag below should not be used
+# 1 : Value configured in tag below should be used
+VISA_RRP_MODE=1
+
+# Value used by C3 to configure the DRL (Dynamic Reader Limit) within the RAM application.
+VISA_RRP_DATA=DF6B10012E000100000BB90000000032204000DF6B0701022030004000DF6B1201AC000531026826200100000BB900000BB9DF6B1501AC0008310268261200000301000005DD000003E9DF6B1201AC0005310268261201000005DD000009C5DF6B1201AC0005310268260001000007D1000005DD
+
+# 0 : Screen Saver disabled on pinpad (default)
+# 1 : Screen Saver enabled
+SCREENSAVER=0
+
+Time used by C3 to wait for the card insertion. Value in seconds (default 60)
+CARD_INSERTION_TIME_OUT=120
+
+#The TCP/IP port that C3NET will monitor for messages from the Sales Application
+C3NET_COM=9518
+
+C3_LOG_LEVEL=8
+
+PIN_CODE=1
+
+NOM_PORTEUR=0
+
+GSQT=DEFAULT
+
+VOICE_REFERRAL_ENABLED=0
+
+POS_DISPLAY_FLAG=1DF
+
+PKE_FALLBACK=0
